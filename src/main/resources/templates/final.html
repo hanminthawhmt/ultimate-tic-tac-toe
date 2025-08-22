@@ -1,0 +1,103 @@
+<html lang="en">
+
+<head>
+    <title>Ultimate Tic-Tac-Toe</title>
+    <link rel="stylesheet" type="text/css" href="/static/uni.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ultimate Tic-Tac-Toe">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Play&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/static/uttt.css">
+    <script type="text/javascript" data-cfasync="false" src="/static/info.js"></script>
+    <script type="text/javascript" data-cfasync="false" src="/static/board.js"></script>
+    <script type="text/javascript" data-cfasync="false" src="/static/game.js"></script>
+</head>
+
+<body>
+    <div class="MainContent">
+        <img class="img" src="https://c.animaapp.com/JTZHMYdv/img/frame-12.svg" />
+        <p></p>
+        <section id="boardWrap">
+        </section>
+        <aside id="infoBox">
+        </aside>
+        <script type="text/javascript">
+            const board = new GameBoard();
+            let state = new GameState();
+            const info = new InfoBox();
+
+            const messages = {
+                start: "$X$ to Start",
+                anyMove: "Please make a move in any area",
+                restrictMove: "Please make a move in the indicated area",
+                xNext: "$X$ to Move",
+                oNext: "$O$ to Move",
+                xWin: "Player X wins!",
+                oWin: "Player O wins!",
+                tie: "It's a tie!",
+            };
+            info.setMsg(messages.start, messages.anyMove);
+
+            function clickedCell(a, b, i, j) {
+
+                const turn = state.turn;
+
+                // Update state and board
+                if (state.move(a, b, i, j)) {
+                    board.move(turn, state, a, b, i, j);
+                }
+
+                // Update info box
+                if (!state.status) {
+                    let winner;
+                    if (state.status == null) {
+                       
+                        const xCount = state.board.reduce((acc, row) => acc + row.filter(cell => cell === true).length, 0);
+                        const oCount = state.board.reduce((acc, row) => acc + row.filter(cell => cell === false).length, 0);
+       
+
+                        if (xCount > oCount) {
+                            winner = "Player X";
+                            alert(`The winner is: ${winner} \n X Count: ${xCount} \n O Count: ${oCount}`);
+                             window.location.href = "/Xwin";
+                            // return "/Xwin";
+                        } else if (oCount > xCount) {
+                            winner = "Player O";
+                            alert(`The winner is: ${winner} \n X Count: ${xCount} \n O Count: ${oCount}`);
+                             window.location.href = "/Owin";
+                            // return "/Owwin";
+                        } else {
+                            alert(`The winner is: ${winner} \n X Count: ${xCount} \n O Count: ${oCount}`);
+                            winner = "It's a tie!";
+                             window.location.href = "/tie";
+                            // return "/tie";
+                        }
+                    } else {
+                        // Winner
+                        winner = state.turn ? 'X' : 'O';
+                        info.setMsg(state.turn ? "X wins" : "O wins");
+                        window.location.href = state.turn ? "/Xwin" : "/Owin";
+                        alert(`Player ${winner} wins!`);
+                    }
+                } else if (state.status) {
+                    info.setMsg(
+                        state.turn ? messages.xNext : messages.oNext,
+                        state.lastMove ? messages.restrictMove : messages.anyMove
+                    );
+                }
+            }
+
+            function reset() {
+                board.reset();
+                state = new GameState();
+                info.setMsg(messages.start, messages.anyMove);
+            }
+        </script>
+
+    </div>
+</body>
+
+</html>

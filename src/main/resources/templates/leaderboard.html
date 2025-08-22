@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600&family=Play&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/static/global.css">
+    <link rel="stylesheet" href="/static/leaderboard.css">
+</head>
+
+<body>
+    
+    <div class="log-in">
+        <div class="frame-wrapper">
+            <div class="frame">
+                <div class="heading">GAME HISTORY</div>
+                <div class="div">
+                    <table class="table table-striped">
+                        <thead>
+                            <th class = "win">WINNER</th>
+                            <th class = "lose">LOSER</th>
+                        </thead>
+                        <tbody>
+                            <tr th:each="winner, iterStat : ${winners}">
+                                <td class="winner" th:text="${winner.name}"></td>
+                                <td class="loser" th:text="${losers[iterStat.index].getName()}"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="frame-2">
+                    <a href="/replay" class="button1">
+                        <div class="text-wrapper-2">Replay</div>
+                    </a>
+                    <!--form th:action=""></form-->
+                    <a href="/" class="button2">
+                        <div class="text-wrapper-2">Exit</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,392 @@
+.log-in {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; /* Add this line to center the content horizontally */
+    background-color: #192a32;
+    width: 100%;
+    height: 100vh;
+}
+
+.frame-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; /* Add this line to center the content horizontally */
+  width: 700px;
+  height: 100%;
+}
+
+.frame {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+  height: 100%;
+  width: 100%;
+}
+
+/*.img {
+    position: relative;
+}*/
+
+.div {
+    display: flex;
+  flex-direction: column;
+  width: 580px;
+  height: 380px;
+  align-items: center;
+  gap: 24px;
+  padding: 40px 60px;
+  position: relative;
+  background-color: #344f5c;
+  border-radius: 20px;
+}
+
+.text-wrapper {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  margin-top: -1px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 500;
+  color: #ffffff;
+  font-size: 24px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.p {
+  position: relative;
+  flex: 1;
+  align-self: stretch;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 500;
+  color: #a8bec9;
+  font-size: 20px;
+  text-align: center;
+  letter-spacing: 0;
+  line-height: normal;
+}
+
+.frame-2 {
+display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  position: relative;
+  flex: 0 0 auto;
+  width: 50%;
+  margin: 35px;
+}
+
+.button1 {
+    display: flex;
+  width: 480px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+  background-color: #31c3be;
+  border-radius: 12px;
+  cursor: pointer; /* Add cursor pointer for interactive element */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */  
+}
+
+.button1:hover{
+    border: solid 3px #00fff7; /* Add border on hover */
+  padding: 8px; /* Adjust padding to accommodate the border */
+}
+
+.text-wrapper-2{
+    position: relative;
+  width: fit-content;
+  font-family: 'Audiowide', sans-serif;
+  font-weight: 400;
+  color: #192a32;
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: normal;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+.text-wrapper-2:hover {
+    color: #ffffff; /* Change color on hover */
+  }
+  
+.text-wrapper-2:active {
+    color: #000000; /* Change color when pressed */
+  }
+
+.button2{
+    display: flex;
+  width: 480px;
+  height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+  background-color: #f2b237;
+  border-radius: 12px;
+  cursor: pointer; /* Add cursor pointer for interactive element */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.button2:hover{
+    border: solid 3px #ffd900;
+  padding: 8px; /* Adjust padding to accommodate the border */
+}
+
+.button2.active {
+    background-color: #9a6c17; /* Change background color when pressed */
+}
+
+.table {
+  width: 100%;
+}
+
+.table th, 
+.table td {
+  border: 5px solid;
+  border-radius: 50px;
+  border-color: #192a32;
+}
+
+
+
+.win {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 300;
+  color: rgb(109, 157, 36);
+  font-size: 30px;
+  text-align: center;
+  padding: 10px;
+}
+
+.lose {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 300;
+  color: rgb(149, 13, 13);
+  font-size: 30px;
+  text-align: center;
+  padding: 10px;
+}
+
+.table tbody tr th,
+.table tbody tr td {
+  color: whitesmoke;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  text-align: center;
+  padding: 10px;
+}
+
+.heading {
+  font-family: 'Orbitron', sans-serif;
+  color: #6e8a97;
+  font-weight: 500;
+  font-size: 45px;
+  position: relative;
+  padding: 15px;
+  margin-top: 5px;
+  text-align: center;
+}
+
+
+@media (max-width: 768px){
+    .log-in {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; /* Add this line to center the content horizontally */
+        background-color: #192a32;
+        width: 100%;
+        height: 100vh;
+    }
+    .frame-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; /* Add this line to center the content horizontally */
+        width: 250px;
+      }
+
+      .frame {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+        height: 100%;
+        width: 100%;
+      }
+
+      .img {
+        position: relative;
+        width: 160px;
+        height: 56px;
+    }
+    
+    .div {
+        display: flex;
+      flex-direction: column;
+      width: 280px;
+      height: 180px;
+      align-items: center;
+      gap: 24px;
+      padding: 40px 60px;
+      position: relative;
+      background-color: #344f5c;
+      border-radius: 20px;
+    }
+
+    .text-wrapper {
+        position: relative;
+        flex: 1;
+        align-self: stretch;
+        margin-top: -1px;
+        font-family: 'Orbitron', sans-serif;
+        font-weight:200;
+        color: #ffffff;
+        font-size: 15px;
+        text-align: center;
+        letter-spacing: 0;
+        line-height: normal;
+      }
+
+       .p {
+        position: relative;
+        flex: 1;
+        align-self: stretch;
+        font-family: 'Orbitron', sans-serif;
+        font-weight: 200;
+        color: #a8bec9;
+        font-size: 10px;
+        text-align: center;
+        letter-spacing: 0;
+        line-height: normal;
+      }
+
+      .frame-2 {
+        display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 16px;
+          position: relative;
+          flex: 0 0 auto;
+        }
+
+    .button1 {
+    display: flex;
+  width: 280px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+  background-color: #31c3be;
+  border-radius: 12px;
+  cursor: pointer; /* Add cursor pointer for interactive element */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */  
+}
+.button1:hover{
+    border: solid 3px #00fff7; /* Add border on hover */
+  padding: 8px; /* Adjust padding to accommodate the border */
+}
+.text-wrapper-2{
+    position: relative;
+  width: fit-content;
+  font-family: 'Audiowide', sans-serif;
+  font-weight: 200;
+  color: #192a32;
+  font-size: 13px;
+  letter-spacing: 0;
+  line-height: normal;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.text-wrapper-2:hover {
+    color: #ffffff; /* Change color on hover */
+  }
+  
+.text-wrapper-2:active {
+    color: #000000; /* Change color when pressed */
+  }
+  .button2{
+    display: flex;
+  width: 280px;
+  height: 38px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  position: relative;
+  background-color: #f2b237;
+  border-radius: 12px;
+  cursor: pointer; /* Add cursor pointer for interactive element */
+  transition: background-color 0.3s ease; /* Smooth transition for background color */
+}
+
+.button2:hover{
+    border: solid 3px #ffd900;
+  padding: 8px; /* Adjust padding to accommodate the border */
+}
+
+.button2.active {
+    background-color: #9a6c17; /* Change background color when pressed */
+}
+
+
+.heading {
+  font-family: 'Orbitron', sans-serif;
+  color: #6e8a97;
+  font-weight: 400;
+  font-size: 35px;
+  position: relative;
+  padding: 15px;
+  margin-top: 5px;
+  text-align: center;
+}
+.table {
+  width: 75%;
+}
+
+.table th, 
+        .table td {
+            border: 3px solid;
+            border-radius: 30px;
+            border-color: #192a32;
+        }
+.win {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 200;
+  color: rgb(109, 157, 36);
+  font-size: 20px;
+  text-align: center;
+  padding: 7px;
+}
+
+.lose {
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 200;
+  color: rgb(149, 13, 13);
+  font-size: 20px;
+  text-align: center;
+  padding: 7px;
+}
+
+.table tbody tr th,
+        .table tbody tr td {
+            color: whitesmoke;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 13px;
+            text-align: center;
+            padding: 7px;
+        }
+
+}
